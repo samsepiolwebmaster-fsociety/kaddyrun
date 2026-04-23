@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Star, Mail, Lock, User as UserIcon, Loader2, AlertTriangle, ArrowRight, ShoppingBasket, Receipt, BarChart3 } from 'lucide-react';
+import { Mail, Lock, User as UserIcon, Loader2, AlertTriangle, ArrowRight, ShoppingBasket, Receipt, BarChart3 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import logoKaddy from '../assets/Logo_Kaddy.png';
 
 type Mode = 'login' | 'signup';
 
@@ -39,14 +40,18 @@ export function AuthPage() {
       <div className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl" />
 
-      <div className="relative max-w-md mx-auto px-5 pt-14 pb-10">
-        <div className="flex items-center gap-2">
-          <h1 className="text-3xl font-bold text-emerald-400 tracking-tight">Kaddy</h1>
-          <Star className="w-6 h-6 text-emerald-400 fill-emerald-400" />
+      <div className="relative max-w-md mx-auto px-5 pt-10 pb-10">
+        <div className="flex flex-col items-center text-center">
+          <img
+            src={logoKaddy}
+            alt="Kaddy"
+            className="w-28 h-28 rounded-3xl shadow-2xl shadow-emerald-500/20 ring-1 ring-slate-800"
+          />
+          <h1 className="mt-5 text-3xl font-bold text-emerald-400 tracking-tight">Kaddy</h1>
+          <p className="mt-2 text-slate-300 text-[15px] leading-relaxed max-w-sm">
+            Ta liste de courses intelligente. Scanne tes tickets, compare les prix, suis tes dépenses.
+          </p>
         </div>
-        <p className="mt-3 text-slate-300 text-[15px] leading-relaxed">
-          Ta liste de courses intelligente. Scanne tes tickets, compare les prix, suis tes dépenses.
-        </p>
 
         <ul className="mt-6 grid grid-cols-3 gap-2">
           {[
