@@ -1,6 +1,5 @@
 import { Star, Home, ChevronDown, LogOut } from 'lucide-react';
 import { STORES } from '../types';
-import logoKaddy from '../assets/Logo_Kaddy.png';
 
 interface Props {
   store: string;
@@ -14,7 +13,6 @@ export function Header({ store, onStoreChange, username, onSignOut }: Props) {
     <header className="flex items-start justify-between gap-4 px-5 pt-6 pb-4">
       <div className="min-w-0">
         <div className="flex items-center gap-2">
-          <img src={logoKaddy} alt="Kaddy" className="w-7 h-7 rounded-md shrink-0" />
           <h1 className="text-2xl font-bold text-emerald-400 tracking-tight">Kaddy</h1>
           <Star className="w-5 h-5 text-emerald-400 fill-emerald-400" />
         </div>

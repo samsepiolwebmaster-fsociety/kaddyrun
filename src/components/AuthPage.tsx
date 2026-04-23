@@ -47,8 +47,7 @@ export function AuthPage() {
             alt="Kaddy"
             className="w-28 h-28 rounded-3xl shadow-2xl shadow-emerald-500/20 ring-1 ring-slate-800"
           />
-          <h1 className="mt-5 text-3xl font-bold text-emerald-400 tracking-tight">Kaddy</h1>
-          <p className="mt-2 text-slate-300 text-[15px] leading-relaxed max-w-sm">
+          <p className="mt-5 text-slate-300 text-[15px] leading-relaxed max-w-sm">
             Ta liste de courses intelligente. Scanne tes tickets, compare les prix, suis tes dépenses.
           </p>
         </div>
