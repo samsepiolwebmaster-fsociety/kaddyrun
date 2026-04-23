@@ -132,7 +132,17 @@ function AuthedApp({ session }: { session: Session }) {
   };
 
   const signOut = async () => {
-    await supabase.auth.signOut();
+    try {
+      await supabase.auth.signOut();
+    } catch (e) {
+      console.error('signOut error', e);
+    }
+    try {
+      window.localStorage.removeItem('kaddy-auth');
+    } catch {
+      // ignore
+    }
+    window.location.reload();
   };
 
   return (
