@@ -244,7 +244,7 @@ export function ListView({
                   e.stopPropagation();
                   onToggleFav(item);
                 }}
-                className="opacity-0 group-hover:opacity-100 transition text-slate-500 hover:text-amber-400 p-1.5"
+                className="transition text-slate-400 hover:text-amber-400 p-1.5"
                 aria-label="Favori"
               >
                 <Star
@@ -256,7 +256,7 @@ export function ListView({
                   e.stopPropagation();
                   onDelete(item);
                 }}
-                className="opacity-0 group-hover:opacity-100 transition text-slate-500 hover:text-red-400 p-1.5"
+                className="transition text-slate-400 hover:text-red-400 p-1.5"
                 aria-label="Supprimer"
               >
                 <Trash2 className="w-4 h-4" />
