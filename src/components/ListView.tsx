@@ -215,15 +215,15 @@ export function ListView({
           return (
             <li
               key={item.id}
-              className={`group flex items-center gap-3 rounded-xl p-3.5 border transition ${rowBg}`}
+              onClick={() => (isPrep ? onToggleToBuy(item) : onToggleCart(item))}
+              className={`group flex items-center gap-3 rounded-xl p-3.5 border transition cursor-pointer select-none touch-manipulation ${rowBg}`}
             >
-              <button
-                onClick={() => (isPrep ? onToggleToBuy(item) : onToggleCart(item))}
+              <span
                 className={`shrink-0 w-6 h-6 rounded-md border-2 flex items-center justify-center transition ${boxClass}`}
-                aria-label="Cocher"
+                aria-hidden="true"
               >
                 {checkedState && <Check className="w-4 h-4" strokeWidth={3} />}
-              </button>
+              </span>
               <div className="flex-1 min-w-0">
                 <div
                   className={`flex items-center gap-1.5 font-semibold text-[15px] ${
@@ -240,7 +240,10 @@ export function ListView({
                 </div>
               </div>
               <button
-                onClick={() => onToggleFav(item)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onToggleFav(item);
+                }}
                 className="opacity-0 group-hover:opacity-100 transition text-slate-500 hover:text-amber-400 p-1.5"
                 aria-label="Favori"
               >
@@ -249,7 +252,10 @@ export function ListView({
                 />
               </button>
               <button
-                onClick={() => onDelete(item)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onDelete(item);
+                }}
                 className="opacity-0 group-hover:opacity-100 transition text-slate-500 hover:text-red-400 p-1.5"
                 aria-label="Supprimer"
               >
